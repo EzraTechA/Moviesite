@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(30, 30, 58);
+}
+
+.h1 a {
+    text-decoration: none;
+}
+
+.h1 h1 {
+    color: rgb(97, 97, 138);
+    font-size: 50px;
+    padding-left: 12px;
+
+}
+
+.h1 span {
+    color: aqua;
+
+}
+
+.nav {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    padding: 20px;
+    padding-top: 15px;
+    display: flex;
+    gap: 20px;
+    text-decoration: none;
+}
+
+.links a {
+    text-decoration: none;
+    gap: 20px;
+    list-style: none;
+    color: white;
+
+}
+
+.links a:hover {
+    color: aqua;
+    /* transform: scale(10px); */
+    transition: .8s;
+}
+
+.image {
+    width: 100%;
+    height: 700px;
+}
+
+img {
+    width: 900px;
+    padding: 50px;
+    padding-left: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+video {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+}
+
+.image {
+    width: 100%;
+
+    /* overflow:hidden; */
+    margin-right: 8px;
+
+    background-repeat: no-repeat;
+
+
+}
+
+.image img {
+    width: 94%;
+    display: flex;
+    padding-right: 20px;
+    opacity: .2;
+}
+
+.logsi {
+    gap: 20px;
+    display: flex;
+    justify-content: end;
+    padding: 25px;
+
+}
+
+.logsi a {
+    color: white;
+}
+
+.logsi a:hover {
+    color: aqua;
+    /* transform: scale(1.09); */
+}
+
+.stars i.active {
+    color: #ff9c1a;
+
+}

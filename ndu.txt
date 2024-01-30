@@ -1,0 +1,34 @@
+<% if(loggedIn){ %>
+  <a href="/logout">logout</a>
+  <% } else { %>
+    <div class="1" style="color: white;">|</div>
+    <div class="login"> <a href="/login" style="text-decoration: none; ">Login</a>
+    </div>
+  <a><div class="signup"><a href="/logsi" style="text-decoration: none; ">SignUp</a>
+  </div></a>
+  <% } %>
+
+
+
+
+   <div class="cards">
+        <% movies.forEach(movie => { %>
+            <a href="/detail/<%= movie.id %>">
+              <div class="card">
+                
+                <div class="circle"></div>
+                <div class="circle">
+                 
+                </div>
+                <div class="card-inner">
+                  <div class="title">
+                    <div class="i"><img src="<%= movie.image %>" alt=""></div>
+                    <span>Title: <%= movie.title %></span> <br><span>Description: <%= movie.description %></span><br>
+       
+                    </div>
+                    </div>
+                    </div>
+              </a>
+         <%  }) %>
+    </div>
+</div>

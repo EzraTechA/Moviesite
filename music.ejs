@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="" type="image/x-icon" style="width: 30px; height: 30px; border-radius: 50%;">
+  <link rel="stylesheet" href="/images/style.css">
+  <link rel="stylesheet" href="./font-awesome.min.css">
+  <link rel="stylesheet" href="./fontawesome-free-6.4.2-desktop/LICENSE.txt">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>MovieHd</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(30, 30, 58);
+  }
+
+  .h1 a {
+    text-decoration: none;
+  }
+
+  .h1 h1 {
+    color: rgb(89, 89, 151);
+    font-size: 50px;
+    padding-left: 12px;
+
+  }
+
+  .h1 span {
+    color: aqua;
+
+  }
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25.8px;
+    padding: 40px;
+  }
+
+  .nav {
+    padding: 10px;
+    display: flex;
+    /* justify-content: space-evenly; */
+    
+  }
+
+  .links {
+    padding: 20px;
+    padding-top: 20px;
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    /* justify-content: space-around; */
+    align-items: center;
+    gap: 3cm;
+    
+  }
+
+  .links a {
+    text-decoration: none;
+    gap: 20px;
+    list-style: none;
+    color: white;
+
+  }
+
+  .links a:hover {
+    color: aqua;
+    transform: scale(1.09);
+    transition: .8s;
+  }
+
+
+
+  video {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+  }
+
+  /* .img{
+  display: flex;
+  flex-wrap:wrap;
+} */
+ .images{
+  display: flex;
+  justify-content: space-between;
+  background-color: #3f85b1;
+  width: 100%;
+ }
+  .card {
+    width: 190px;
+    height: 254px;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+  }
+
+  .card:hover {
+    transform: scale(1.04) rotate(1deg);
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#5694b8, #53ef7d);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+  }
+
+  .circle:nth-child(1) {
+    top: -25px;
+    left: -25px;
+  }
+
+  .circle:nth-child(2) {
+    bottom: -25px;
+    right: -25px;
+    animation-name: move-down1;
+  }
+
+  @keyframes move-up6 {
+    to {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes move-down1 {
+    to {
+      transform: translateY(10px);
+    }
+  }
+
+  .cards {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+  }
+
+  .searchBox {
+    display: flex;
+    width: 350px;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #2f3640;
+    border-radius: 50px;
+    position: relative;
+    padding-left: 2px;
+
+  }
+  .searchButton {
+    display: flex;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    right: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+    border: 0;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  }
+
+  /*hover effect*/
+  button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+  }
+
+  /*button pressing effect*/
+  button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+  .searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    padding: 24px 46px 24px 26px;
+
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+  }
+
+  /* .images{
+  display: flex;
+  flex-direction: row;
+  background-repeat: no-repeat;
+  width: 100%;
+} */
+  /* .image1 img {
+    display: flex;
+    padding-right: 00px;
+  } */
+
+  .title {
+    padding: 20px;
+    color: white;
+
+  }
+
+  .title span {
+    font-size: smaller;
+  }
+
+  .card-inner {
+    display: flex;
+
+    align-items: end;
+  }
+  .cards{
+    display: flex;
+  }
+
+
+  .icons {
+    display: flex;
+    gap: 50px;
+    justify-content: end;
+    align-items: start;
+    padding-left: 45px;
+  }
+
+  .icons a {
+    text-decoration: none;
+    gap: 10px;
+    padding-top: 20px;
+    color: rgb(46, 167, 167);
+    padding-bottom: 10px;
+  }
+.images{
+  background-image: url(/images/5004467.jpeg);
+  background-size: cover;
+  height: 500px;
+}
+  .icons i:hover {
+    transform: scale(1.09);
+    animation: ease-in-out;
+    transition: .5s;
+    box-shadow: 10px 10px 30px #009EFD;
+    background-color: #326686;
+    border-radius: 50%;
+
+  }
+
+  .icons i {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    border: 1px solid rgb(46, 167, 167);
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 2px 12px #009EFD;
+  }
+
+  .fotterr {
+    display: flex;
+
+
+  }
+.text{
+  width: 400px;
+  padding-left: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.to-top {
+        background: rgb(41, 132, 160);
+        position: fixed;
+        bottom: 16px;
+        right: 32px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        color: #1f1f1f;
+        text-decoration: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .4s;
+    }
+
+    .to-top i {
+        font-size: 20px;
+        color: aliceblue;
+    }
+    .container{
+      width: 100%;
+      height: 100%;
+      background-color: #00000099;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .text h1{
+      font-size: 40px;
+    }
+    .desc{
+  width: 150px;
+  height: 50px;
+  overflow: hidden;
+  /* margin-bottom: 10px; */
+  /* border:1px solid #009EFD; */
+}
+    .to-top.active {
+        bottom: 32px;
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+  .i img {
+    width: 4cm;
+    height: 155px;
+    padding-left: 0px;
+    padding-bottom: 10PX;
+  }
+
+  p {
+    display: flex;
+    padding: 5px;
+    color: white;
+    padding-bottom: 5px;
+    /* padding-left: ; */
+    width: 4cm;
+    height: 0px;
+ }
+  span{
+    outline: none;
+  }
+  .fotterr{
+    display: flex;
+    margin-bottom: 0;
+    /* flex-direction: column; */
+    justify-content: space-between;
+  }
+  body {
+    height: 100vh;
+  }
+  .img img{
+    width: 900px;
+    height: 489px;
+    object-fit: contain;
+  }
+  #search{
+    width: 200px;
+  }
+</style>
+
+<body style="background: linear-gradient(100deg,rgb(40, 40, 78),rgb(24, 78, 78));">
+
+
+
+  <div class="nav">
+
+    <div class="h1">
+      <a href="/index" active>
+        <h1 style="font-size: 40px;">ንድራ<span>.ፊልሞች</span></h1>
+      </a>
+    </div>
+
+
+
+
+      </button>
+    </div>
+  </div>
+    <div class="links">
+      <a href="/index"> Home</a>
+      <a href="/About">About</a>
+      <a href="#contact">Contact</a>
+        <a href="/action">Action</a>
+       <a href="/animation">Animation</a>
+       <a href="/music">Music</a>
+    </div>
+  
+  </div>
+
+  </div>
+
+  <div class="cards">
+
+    <% movies.forEach(function(movies){ %>
+      <a href="/detail/<%= movies.id %>">
+        <div class="card">
+          
+          <div class="circle"></div>
+          <div class="circle">
+           
+          </div>
+          <div class="card-inner">
+            <div class="title">
+              <div class="i"><img src="<%= movies.image %>" alt=""></div>
+              <span>Title: <%= movies.title %></span> <br>
+              <div class="desc">
+              <span>Description: <%= movies.description %></span><br>
+            </div>
+              </div>
+              </div>
+              </div>
+        </a>
+   <%  }) %>
+    
+        </div>
+  <a href="#" class="to-top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+  <div class="fotterr" style="height: 29vh;width: 100%; background-color: #2b3e5a; display: flex; padding-bottom: 0;">
+    <div class="foot" style="padding: 30px;">
+      <a href="#contact" style="text-decoration: none; color: white; padding: 30px;">Contact</a>
+      <div class="icons">
+        <a href="https://www.facebook.com/TechShope1228"><i i class="fa-brands fa-facebook-f"></i> </a>
+        <a href="https://www.instagram.com/ez_a.12/"><i class="fa-brands fa-instagram"></i> </a>
+        <a href="https://www.tiktok.com/@ezrayi0a"> <i class="fa-brands fa-tiktok"></i> </a>
+        <a href="https://www.youtube.com/channel/UCchUGWAeDcLMf7TQX1nUxxA"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+    </div>
+    <div class="h1p" style="display: flex; gap: 40px;">
+      <div class="p" style="display: flex; gap: 10px; flex-direction: column; width: 10cm;color: white; ">
+        <p style="color: white; font-family: Arial, Helvetica, sans-serif;">
+        <div class="p" id="contact">
+          <h1>About</h1><br>HI THERE this site develop in 2023, in this site you can see and upload every music and
+          Movies, in
+          addition it's easy for use and completly free. </p>
+          </div>
+        </div>
+      </div>
+   
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <script defer>
+    function clicked() {
+      console.log('hello world')
+    }
+
+    const reveal = {
+      origin: 'left',
+      delay: 200,
+      distance: '120px',
+      easing: 'ease-in-out',
+    };
+    origin: 'left',
+    ScrollReveal().reveal('.text', { delay: 500, reset: true });
+
+    ScrollReveal().reveal('.h1', { delay: 500, reset: true });
+    ScrollReveal().reveal('.logsi', { duration: 500, reset: true });
+    ScrollReveal().reveal('.fotterr', { delay: 500, reset: true });
+    ScrollReveal().reveal('.links', { delay: 500, reset: true });
+    ScrollReveal().reveal('.cards', { delay: 500, reset: true });
+    ScrollReveal().reveal('.images', { delay: 500, reset: true });
+    ScrollReveal().reveal('.searchBox', { delay: 500, reset: true });
+
+    const toTop = document.querySelector(".to-top");
+
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 100) {
+        toTop.classList.add("active");
+    } else {
+        toTop.classList.remove("active");
+    }
+});
+const stars = document.querySelectorAll('.stars i');
+
+stars.forEach((star, index1) => {
+
+    star.addEventListener("click", () => {
+
+        star.forEach((star, index2) => {
+
+            index1 >= index2 ? star.classList.add("active") : star.classList.remove("active")
+        });
+    });
+});
+  </script>
+</body>
+
+</html>

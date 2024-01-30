@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+button{
+  box-shadow: 6px 8px 10px  #5387a8;
+  background-color: rgb(81, 108, 139);
+  border: 1px solid aqua;
+  
+}
+button:hover{
+  border: none;
+  box-shadow: 2px 5px 7px #335468;
+  transform: scale(1.09);
+  transition: .5s;
+  transition-property: all;
+  background-color:rgb(55, 62, 82);
+  color: white;
+}
+
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 400px;
+    gap: 20px;
+}
+.inputs input{
+  height: 20px;
+  border: none;
+  background-color: #191d25;
+   border-radius: 10px;
+   padding: 10px;
+   color: white;
+}
+.inputs input:hover{
+  transform: scale(1.02);
+  transition: .6s;
+}
+.upload{
+  display: flex;
+  flex-direction: column;
+ margin-top: 10%;
+ height: 550px;
+ justify-content: center;
+ align-items: center;
+ width: 600px;
+ /*border: 1px solid blue;*/
+}
+.input{
+  padding: 15px;
+}
+.inputs1{
+  display: flex;
+  gap: 15px;
+  /* flex-direction: column; */
+}
+
+.in input{
+  height: 150px;
+  width: 400px;
+}
+.inputs1 input{
+  height: 100px;
+  width: 100px;
+  background: transparent;
+  cursor: pointer;
+  background-color: #191d25;
+}
+select{
+  width: 90px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #191d25;
+  color: white;
+  border: none;
+  outline: none;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p{
+  padding-bottom: 12px;
+  color: white;
+}
+</style>
+<body style="background: linear-gradient(100deg,rgb(40, 40, 78),rgb(24, 78, 78));font-family: Arial, Helvetica, sans-serif;">
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <div class="upload">
+
+  
+        <div class="inputs">
+          <input type="text" placeholder="Title" name="title" required>
+          <div class="in">
+          <input  type="text" name="description" placeholder="Some Description" required >
+        </div>
+        <div class="catagory">
+          <select name="category" id="">
+            <option >Music</option>
+            <option >Animation</option>
+            <option >Action</option>
+          </select>
+        </div>
+         </div>
+         <div class="inputs1">
+          <div class="input">
+            <p>Choose cover photo</p>
+          <input id="file" type="file" name="cover">
+        </div>
+          <div class="input">
+            <p>Choose video file</p>
+          <input id="file" name="video" type="file">
+        </div>
+        </div>
+       
+  
+<div class="btn" style="display: flex; padding-top: 20px;margin-left: 0px;">
+     <button style="  display: flex; width: 150px; height: 50px; justify-content: center;align-items: center; border-radius: 20px;">Upload Movies</button>
+    </div>
+  </div>
+  </form>
+    </body>
+</html>

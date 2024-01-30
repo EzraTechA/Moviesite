@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ንድራ ፊልሞች</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        height: 649px;
+        width: 20%;
+        border: 1px solid rgb(29, 29, 29);
+       
+    }
+    .card {
+    width: 190px;
+    height: 254px;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+  }
+
+  .card:hover {
+    transform: scale(1.04) rotate(1deg);
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#5694b8, #53ef7d);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(30, 30, 58);
+  }
+
+  .h1 a {
+    text-decoration: none;
+  }
+
+  .h1 h1 {
+    color: rgb(89, 89, 151);
+    font-size: 50px;
+    padding-left: 12px;
+
+  }
+
+  .h1 span {
+    color: aqua;
+
+  }
+
+  .nav {
+    padding: 10px;
+    display: flex;
+    /* justify-content: space-evenly; */
+    
+  }
+
+  .link {
+    gap: 50px;
+    display: flex;
+/*     
+  align-items: center;
+  justify-content: center; */
+   /* margin-left: 50px; */
+   /* border: 1px solid black; */
+  }
+
+  .link a {
+    text-decoration: none;
+    gap: 20px;
+    list-style: none;
+    color: white;
+    display: flex;
+  }
+.link ul{
+ margin-top: 20px;
+  display: flex;
+  list-style: none;
+  gap: 60px;
+  margin-left: 30px;
+  padding-bottom: 10px;
+}
+  .link a:hover {
+    color: aqua;
+    transform: scale(1.09);
+    transition: .8s;
+  }
+
+
+
+  video {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+  }
+
+  /* .img{
+  display: flex;
+  flex-wrap:wrap;
+} */
+ .images{
+  display: flex;
+  justify-content: space-between;
+  background-color: #3f85b1;
+  width: 100%;
+ }
+  .card {
+    width: 190px;
+    height: 254px;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+  }
+.desc{
+  width: 150px;
+  height: 50px;
+  overflow: hidden;
+  /* border:1px solid #009EFD; */
+}
+  .card-inner {
+    width: inherit;
+    height: inherit;
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+  }
+
+  .card:hover {
+    transform: scale(1.04) rotate(1deg);
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#5694b8, #53ef7d);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up6 2s ease-in infinite alternate-reverse;
+  }
+
+  .circle:nth-child(1) {
+    top: -25px;
+    left: -25px;
+  }
+
+  .circle:nth-child(2) {
+    bottom: -25px;
+    right: -25px;
+    animation-name: move-down1;
+  }
+
+  @keyframes move-up6 {
+    to {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes move-down1 {
+    to {
+      transform: translateY(10px);
+    }
+  }
+
+  .cards {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+  }
+
+  .searchBox {
+    display: flex;
+    width: 350px;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #2f3640;
+    border-radius: 50px;
+    position: relative;
+    padding-left: 2px;
+
+  }
+  .searchButton {
+    display: flex;
+    justify-content: center;
+    color: white;
+    position: absolute;
+    right: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+    border: 0;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  }
+
+  /*hover effect*/
+  button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+  }
+
+  /*button pressing effect*/
+  button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+  .searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    padding: 24px 46px 24px 26px;
+
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+  }
+
+  /* .images{
+  display: flex;
+  flex-direction: row;
+  background-repeat: no-repeat;
+  width: 100%;
+} */
+  /* .image1 img {
+    display: flex;
+    padding-right: 00px;
+  } */
+
+  .title {
+    padding: 20px;
+    color: white;
+    width: 200px;
+    /* height: 50px; */
+    /* border: 1px solid black; */
+  }
+
+  .title span {
+    font-size: smaller;
+    width: 150px;
+  }
+
+  .card-inner {
+    display: flex;
+
+    align-items: end;
+  }
+  .cards{
+    display: flex;
+  }
+
+
+  .icons {
+    display: flex;
+    gap: 50px;
+    justify-content: end;
+    align-items: start;
+    padding-left: 45px;
+  }
+
+  .icons a {
+    text-decoration: none;
+    gap: 10px;
+    padding-top: 20px;
+    color: rgb(46, 167, 167);
+    padding-bottom: 10px;
+  }
+.images{
+  background-image: url(/images/1480264044.png);
+  background-size: cover;
+  height: 500px;
+}
+  .icons i:hover {
+    transform: scale(1.09);
+    animation: ease-in-out;
+    transition: .5s;
+    box-shadow: 10px 10px 30px #009EFD;
+    background-color: #326686;
+    border-radius: 50%;
+
+  }
+
+  .icons i {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    border: 1px solid rgb(46, 167, 167);
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 2px 12px #009EFD;
+  }
+  .desc{
+  width: 150px;
+  height: 40px;
+  overflow: hidden;
+  /* border:1px solid #009EFD; */
+}
+  
+  .fotterr {
+    display: flex;
+
+
+  }
+.text{
+  width: 400px;
+  padding-left: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.to-top {
+        background: rgb(41, 132, 160);
+        position: fixed;
+        bottom: 16px;
+        right: 32px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        color: #1f1f1f;
+        text-decoration: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: all .4s;
+    }
+
+    .to-top i {
+        font-size: 20px;
+        color: aliceblue;
+    }
+    .container{
+      width: 100%;
+      height: 100%;
+      background-color: #00000099;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .text h1{
+      font-size: 40px;
+    }
+
+    .to-top.active {
+        bottom: 32px;
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+  .i img {
+    width: 3.9cm;
+    height: 160px;
+    padding-left: 0px;
+    /* padding-bottom: 10PX; */
+  }
+
+  p {
+    display: flex;
+    padding: 5px;
+    color: white;
+    padding-bottom: 5px;
+    /* padding-left: ; */
+    width: 4cm;
+    height: 0px;
+ }
+  span{
+    outline: none;
+  }
+  .fotterr{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+  }
+  .img img{
+    width: 900px;
+    height: 489px;
+    object-fit: contain;
+  }
+  #search{
+    width: 200px;
+  }
+
+  .circle:nth-child(1) {
+    top: -25px;
+    left: -25px;
+  }
+  .card-inner {
+    display: flex;
+
+    align-items: end;
+  }
+  .cards{
+    display: flex;
+  }
+  .circle:nth-child(2) {
+    bottom: -25px;
+    right: -25px;
+    animation-name: move-down1;
+  }
+    .sidebar a{
+        padding-top: 2cm;
+        padding-left: 20px;
+        text-decoration: none;
+        outline: none;
+        
+    }
+    .body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .body p{
+        padding-top: 20px;
+    }
+    h1{
+        padding-left: 20px;
+    }
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0;
+        margin: 0  ;
+    }
+    .main{
+        display: flex;
+        /* justify-content: space-between; */
+
+    }
+     
+</style>
+<body style="height: 100%; width: 100%; background: linear-gradient(100deg,rgb(40, 40, 78),rgb(24, 78, 78));">
+   
+     <div class="main" style=" background: linear-gradient(100deg,rgb(40, 40, 78),rgb(24, 78, 78));">
+       
+        <div class="sidebar" >
+            <h1 style="color: white;">Dashboard</h1>
+    <a href="/my-uploads" style="color: rgb(244, 248, 248); border-bottom: 1px solid rgb(7, 190, 223);padding-bottom: 15px;">Your upload movies</a>
+    <a href="/upload" style="color: white; border-bottom: 1px solid rgb(7, 190, 223);padding-bottom: 15px;">upload Movies</a>
+    <a href="/index" style="color: rgb(226, 239, 241); border-bottom: 1px solid rgb(7, 190, 223);padding-bottom: 15px; ">Home</a>
+        </div>
+        <div class="cards">
+            <% movies.forEach(movie => { %>
+                <a href="/detail/<%= movie.id %>">
+                  <div class="card">
+                    
+                    <div class="circle"></div>
+                    <div class="circle">
+                     
+                    </div>
+                    <div class="card-inner">
+                      <div class="title">
+                        <div class="i"><img src="<%= movie.image %>" alt=""></div>
+                        <span>Title: <%= movie.title %></span> <br>
+                        <div class="desc">
+                        <span>Description: <%= movie.description %></span><br>
+                    </div>
+                        </div>
+                        </div>
+                        </div>
+                  </a>
+             <%  }) %>
+        </div>
+    </div>
+            <!-- <h1 style="padding: 3cm; padding-right: 9cm; color: white; font-family: Arial, Helvetica, sans-serif;">Your viewed movies</h1>  -->
+        
+    
+    
+
+</div>
+
+
+
+</body>
+</html>

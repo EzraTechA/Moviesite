@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<style>
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  justify-content: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: rgb(118, 206, 206);
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: aqua;
+}
+
+.message, 
+.signin {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a:hover {
+  text-decoration: underline royalblue;
+}
+
+.signin a {
+  color: #00bfff;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 25px;
+  
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+ background-color: rgba(255,255,255,.05);
+  color: #fff;
+  width: 100%;
+  padding: 20px 05px 05px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 12.5px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+  color: #00bfff;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.input {
+  font-size: medium;
+}
+
+.submit {
+  box-shadow: 6px 8px 10px  #5387a8;
+  background-color: rgb(81, 108, 139);
+  border: 1px solid aqua;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+}
+
+.submit:hover {
+  border: none;
+  box-shadow: 2px 5px 7px #335468;
+  transform: scale(1.05);
+  transition: .5s;
+  transition-property: all;
+  /* background-color:rgb(55, 62, 82); */
+  color: white;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+.form{
+    background: transparent ;
+    border:1px solid #00bfff;
+    /* backdrop-filter: blur(10px); */
+    
+}
+.form:hover{
+    transform: scale(1.05);
+    transition: .5s;
+    animation: ease-in-out;
+    box-shadow: 2px 8px 5px 7px #335468;
+}
+.form label:hover{
+    transform: scale(1.02);
+    transition: .5s;
+    animation: ease-in-out;
+}
+
+</style>
+<body style="background: linear-gradient(100deg,rgb(40, 40, 78),rgb(24, 78, 78)); display: flex; justify-content: center; padding-top: 50px; font-family: Arial, Helvetica, sans-serif;">
+
+  <form class="form" method="post" action="/login">
+        <p class="title">Login </p>
+        <% if(error) { %>
+        <p style="color: red;">incorrect username or password</p>
+        <% } %>   
+        <p class="message">Login to watch our Movies. </p>
+            <div class="flex"></div>        
+        <label>
+            <input class="input" type="text" name="username" placeholder="" required="">
+            <span>Username</span>
+        </label>
+        <label>
+            <input class="input" type="password" name="password" placeholder="" required="">
+            <span> password</span>
+        </label>
+        <button class="submit">Submit</button>
+        <p class="signin">you haven't an account? <a href="/signup">SignUp</a> </p>
+    </form>
+ 
+   
+
+</body>
+</html>

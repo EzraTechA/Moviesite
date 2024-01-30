@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>details</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(14, 14, 26);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0px 0px 60px #1f4c65;
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+  }
+
+  .btn:active {
+    scale: 0.92;
+  }
+
+  .btn:hover {
+    background: rgb(2, 29, 78);
+    background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+    color: rgb(4, 4, 38);
+  }
+
+  .video {
+    /* padding-top: 90px; */
+
+    width: 400px;
+    height: 500px;
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    justify-content: space-between;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .video video {
+    height: 400px;
+  }
+
+  body {
+    padding: 30px;
+  }
+
+  .texts p {
+    /* width: 100px; */
+    /* height: 40px; */
+    color: white;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .texts{
+    width: 250px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .p2{
+    width: 500px;
+    height: 50px;
+    /* border: 1px solid cadetblue; */
+  }
+</style>
+
+<body style="background-color: rgb(30, 30, 58); font-family: Arial, Helvetica, sans-serif; ">
+  <div class="video">
+    <video id="vid" width="300" controls 
+      src="<%= movies.video %>"></video>
+    <div class="texts">
+      <div class="p1">
+        <p>Title:  <%= movies.title %></p>
+      </div>
+    
+      <div class="p3">
+         <p>Category:  <%= movies.catagory %></p>
+      </div>
+      <div class="p2">
+        <p>Description:  <%= movies.description %></p>
+      </div>
+     
+    </div>
+
+    <button class="btn" id="btn " onclick="play()">
+      Watch Now
+    </button>
+  </div>
+  <script>
+    var video = document.getElementById('vid')
+    var btn = document.getElementById('btn')
+    btn.style.background = "url(play.png) no-repeat"
+    function play(){
+     if(video.paused){
+      video.play();
+      btn.style.background = "url(play.png) no-repeat"
+     } 
+     else{
+      video.pause();
+      btn.style.background = "url(play.png) no-repeat"
+     }
+    }
+  </script>
+</body>
+
+</html>
